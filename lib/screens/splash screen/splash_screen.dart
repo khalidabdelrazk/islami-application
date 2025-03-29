@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami_app/core/routes/route_names.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 3), () {
       if (mounted) {
         Navigator.pushReplacementNamed(context, RouteNames.homeScreen);
       }
@@ -55,6 +54,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   children: [
                     Expanded(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           FadeInLeft(
                             child: Image.asset(
@@ -74,6 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     Expanded(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           FadeInRight(
                             child: Image.asset(
