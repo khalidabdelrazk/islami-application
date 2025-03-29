@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
           fixedColor: AppColors.white,
           unselectedItemColor: Colors.black,
           showUnselectedLabels: false,
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.library_books),
               label: 'Quran',
