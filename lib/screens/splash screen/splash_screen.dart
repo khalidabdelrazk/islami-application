@@ -30,7 +30,9 @@ class _SplashScreenState extends State<SplashScreen> {
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/img/splash images/png/splash_background.png'),
+            image: AssetImage(
+              'assets/img/splash images/png/splash_background.png',
+            ),
             fit: BoxFit.cover,
           ),
         ),
@@ -67,9 +69,11 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
 
                     Center(
-                      child: FadeIn(child: Image.asset(
-                        'assets/img/splash images/png/splash middle icon.png',
-                      ),),
+                      child: FadeIn(
+                        child: Image.asset(
+                          'assets/img/splash images/png/splash middle icon.png',
+                        ),
+                      ),
                     ),
 
                     Expanded(
@@ -89,10 +93,12 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
               Expanded(
-                child: FadeInUp(child: Image.asset(
-                  'assets/img/splash images/png/branding img.png',
-                ),),
-              )
+                child: FadeInUp(
+                  child: Image.asset(
+                    'assets/img/splash images/png/branding img.png',
+                  ),
+                ),
+              ),
             ],
           ),
         ),
