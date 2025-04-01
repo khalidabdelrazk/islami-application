@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/core/app_colors.dart';
 import 'package:islami_app/core/constant/quran_helper.dart';
+import 'package:islami_app/core/models/sura_data.dart';
+import 'package:islami_app/core/routes/route_names.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
   // Demo list to show querying
-  List<String> searchTerms = QuranHelper.englishName + QuranHelper.arabicName ;
+  List<String> searchTerms = QuranHelper.englishName + QuranHelper.arabicName;
 
   // first overwrite to
   // clear the search text
@@ -32,11 +33,12 @@ class CustomSearchDelegate extends SearchDelegate {
         hintStyle: TextStyle(color: AppColors.prime), // Change hint text color
       ),
       textTheme: TextTheme(
-        titleLarge: TextStyle(color: AppColors.prime), // Change input text color
+        titleLarge: TextStyle(
+          color: AppColors.prime,
+        ), // Change input text color
       ),
     );
   }
-
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -65,9 +67,9 @@ class CustomSearchDelegate extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
     List<String> matchQuery = [];
-    for (var fruit in searchTerms) {
-      if (fruit.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(fruit);
+    for (var sura in searchTerms) {
+      if (sura.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(sura);
       }
     }
     return ListView.builder(
@@ -93,9 +95,9 @@ class CustomSearchDelegate extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     List<String> matchQuery = [];
-    for (var fruit in searchTerms) {
-      if (fruit.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(fruit);
+    for (var sura in searchTerms) {
+      if (sura.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(sura);
       }
     }
     return Container(
@@ -112,7 +114,17 @@ class CustomSearchDelegate extends SearchDelegate {
           return ListTile(
             title: InkWell(
               onTap: () {
-
+                int i = QuranHelper.englishName.contains(result) ? QuranHelper.englishName.indexOf(result): QuranHelper.arabicName.indexOf(result);
+                Navigator.pushNamed(
+                  context,
+                  RouteNames.quranDetails,
+                  arguments: SuraData(
+                    enName: QuranHelper.englishName[i],
+                    arName: QuranHelper.arabicName[i],
+                    verses: QuranHelper.verses[i],
+                    number: '${i + 1}',
+                  ),
+                );
               },
               child: Text(
                 result,
