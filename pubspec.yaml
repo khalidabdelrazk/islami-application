@@ -65,6 +65,8 @@ flutter:
      - assets/img/splash images/png/
      - assets/img/home screen/svg/
      - assets/img/home screen/img/
+     - assets/suras/
+     - assets/img/quran details/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

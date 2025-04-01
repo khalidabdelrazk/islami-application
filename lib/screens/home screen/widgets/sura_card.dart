@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/core/models/sura_data.dart';
+import 'package:islami_app/core/routes/route_names.dart';
+import 'package:islami_app/core/routes/routes.dart';
 
 import '../../../core/app_colors.dart';
 
@@ -35,7 +37,9 @@ class SuraCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, RouteNames.quranDetails, arguments: suraData);
+        },
         child: Row(
           children: [
             Container(
