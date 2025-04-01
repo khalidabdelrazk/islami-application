@@ -114,15 +114,15 @@ class CustomSearchDelegate extends SearchDelegate {
           return ListTile(
             title: InkWell(
               onTap: () {
-                int i = QuranHelper.englishName.contains(result) ? QuranHelper.englishName.indexOf(result): QuranHelper.arabicName.indexOf(result);
+                index = QuranHelper.englishName.contains(result) ? QuranHelper.englishName.indexOf(result): QuranHelper.arabicName.indexOf(result);
                 Navigator.pushNamed(
                   context,
                   RouteNames.quranDetails,
                   arguments: SuraData(
-                    enName: QuranHelper.englishName[i],
-                    arName: QuranHelper.arabicName[i],
-                    verses: QuranHelper.verses[i],
-                    number: '${i + 1}',
+                    enName: QuranHelper.englishName[index],
+                    arName: QuranHelper.arabicName[index],
+                    verses: QuranHelper.verses[index],
+                    number: '${index + 1}',
                   ),
                 );
               },
