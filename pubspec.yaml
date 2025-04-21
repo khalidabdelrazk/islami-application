@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.17
   animate_do: ^4.2.0
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
      - assets/img/home screen/img/
      - assets/suras/
      - assets/img/quran details/
+     - assets/ahadeth.txt
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
